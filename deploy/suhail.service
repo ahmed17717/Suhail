@@ -1,0 +1,32 @@
+# Install:  sudo cp deploy/suhail.service /etc/systemd/system/
+#           sudo systemctl daemon-reload && sudo systemctl enable --now suhail
+# Assumes the project lives in /opt/suhail with a virtualenv in /opt/suhail/venv
+# and a dedicated unprivileged user "suhail". Adjust the paths if yours differ.
+
+[Unit]
+Description=Suhail - on-premise RAG assistant (Streamlit)
+After=network.target
+
+[Service]
+Type=simple
+User=suhail
+Group=suhail
+WorkingDirectory=/opt/suhail
+EnvironmentFile=/opt/suhail/.env
+ExecStart=/opt/suhail/venv/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+Restart=on-failure
+RestartSec=5
+
+# --- Hardening: the app only needs to read its own code and write ./data ---
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/suhail/data
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

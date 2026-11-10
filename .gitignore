@@ -1,0 +1,44 @@
+# secrets & local config
+.env
+*.pem
+
+# runtime data — may contain confidential documents
+data/*
+!data/.gitkeep
+# model weights (multi-GB)
+models/*
+!models/.gitkeep
+
+# python / tooling
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# never commit archives of the project
+*.rar
+*.zip
+
+# Additional secrets and local files
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Private keys
+*.key

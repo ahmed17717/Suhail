@@ -1,0 +1,3 @@
+# Full production install:  pip install -r requirements.txt
+-r requirements/base.txt
+-r requirements/ml.txt

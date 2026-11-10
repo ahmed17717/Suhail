@@ -1,0 +1,18 @@
+[server]
+headless = true
+# Serves ./static (bundled Arabic font) at /app/static — no Google Fonts call.
+enableStaticServing = true
+# Keep in sync with MAX_UPLOAD_MB in .env (the app enforces its own limit too).
+maxUploadSize = 20
+
+[browser]
+# Do not phone home from an internal network.
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#B58F3A"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F7F7F7"
+textColor = "#2B2B2D"
+font = "sans serif"

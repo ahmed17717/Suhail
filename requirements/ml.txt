@@ -1,0 +1,5 @@
+# Heavy ML dependencies — only needed on the machine that actually answers questions.
+# llama-cpp-python compiles native code; for an NVIDIA GPU see docs/DEPLOYMENT.md.
+sentence-transformers>=3.0
+llama-cpp-python>=0.3
+huggingface_hub>=0.24

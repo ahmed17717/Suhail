@@ -1,0 +1,6 @@
+# Lightweight runtime dependencies (also what CI installs).
+chromadb>=1.0,<2
+pdfplumber>=0.11,<1
+python-docx>=1.1,<2
+python-dotenv>=1.0,<2
+streamlit>=1.40,<2
