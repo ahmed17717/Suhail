@@ -54,7 +54,7 @@ A longer walkthrough, including the design trade-offs, is in
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USER/suhail.git && cd suhail
+git clone https://github.com/ahmed17717/suhail.git && cd suhail
 python -m venv venv && source venv/bin/activate
 
 # 1. Run the tests (lightweight: no GPU, no models)
